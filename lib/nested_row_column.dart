@@ -36,6 +36,7 @@ class NestedRowColumn extends StatelessWidget {
             Icon(Icons.access_alarm),
           ],)
 
+
       ],),
     );
   }
