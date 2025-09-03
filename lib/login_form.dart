@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 
-class LoginFormScreen extends StatelessWidget {
+class LoginFormScreen extends StatefulWidget {
   const LoginFormScreen({super.key});
 
+  @override
+  State<LoginFormScreen> createState() => _LoginFormScreenState();
+}
+
+class _LoginFormScreenState extends State<LoginFormScreen> {
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,6 +26,7 @@ class LoginFormScreen extends StatelessWidget {
         Text("LOGIN",style: TextStyle(fontSize: 30),),
         SizedBox(height: 20,),
         TextField(
+          controller: emailController,
           decoration: InputDecoration(
             label: Text("Email"),
             hintText: 'abdullah@gmail.com',
@@ -33,6 +41,7 @@ class LoginFormScreen extends StatelessWidget {
         ),
         SizedBox(height: 20,),
         TextField(
+          controller: passwordController,
           decoration: InputDecoration(
             label: Text("Password"),
             hintText: '123456789',
@@ -45,7 +54,24 @@ class LoginFormScreen extends StatelessWidget {
           ),
         ),
         SizedBox(height: 20,),
-        ElevatedButton(onPressed: (){}, child: Text("Login")),
+        ElevatedButton(onPressed: (){
+          if(emailController.text.isEmpty){
+            ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(content: Text("Your email is empty")));
+            return;
+          }
+          if(passwordController.text.isEmpty){
+            ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(content: Text("Your password is empty")));
+            return;
+          }
+          if(passwordController.text.length < 8){
+            ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(content: Text("Your password is less than 8 digits")));
+            return;
+          }
+
+        }, child: Text("Login")),
         SizedBox(height: 20,),
         Text("Don't have account ?"),
         SizedBox(height: 20,),
