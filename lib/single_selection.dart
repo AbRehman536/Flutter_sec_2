@@ -18,7 +18,7 @@ class _SingleSelectionDemoState extends State<SingleSelectionDemo> {
         backgroundColor: Colors.green,
       ),
       body: ListView.builder(
-        itemCount: 8,
+        itemCount: 7,
         itemBuilder: (context, i ){
           final isSelected = selectedIndex == i;
           return  ListTile(
