@@ -13,19 +13,19 @@ class ListTileDemo extends StatelessWidget {
         centerTitle: true,
       ),
       body: ListView.builder(
-        itemCount: 28,
+        itemCount: 8,
         itemBuilder: (context, i){
-            return Card(
-              color: Colors.yellow,
-              child: ListTile(
-                leading: Icon(Icons.settings),
-                title: Text("Settings"),
-                subtitle: Text("Phone Settings"),
-                trailing: Icon(Icons.arrow_forward_ios),
-              ),
-            );
-          }
-      ),
+          return Card(
+            color: Colors.green,
+            child: ListTile(
+              leading: Icon(Icons.person),
+              title: Text("Profile"),
+              subtitle: Text("Profile Settings"),
+              trailing: Icon(Icons.arrow_forward_ios),
+            ),
+          );
+        }
+      )
     );
   }
 }

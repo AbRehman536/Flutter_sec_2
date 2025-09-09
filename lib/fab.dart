@@ -20,11 +20,10 @@ class FABView extends StatelessWidget {
         ],
       ),
      floatingActionButton: FloatingActionButton.extended(
-       backgroundColor: Colors.blue,
-       onPressed: (){},
-       icon: Icon(Icons.chat,color: Colors.white,),
-       label: Text("Chat",style: TextStyle(color: Colors.white),),
-     ),
+       backgroundColor: Colors.green,
+       label: Text("Notification"),
+       icon: Icon(Icons.notification_add),
+       onPressed: (){},),
     );
   }
 }
