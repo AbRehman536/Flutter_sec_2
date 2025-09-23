@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sec_2/models/onBoarding.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class PageViewDemo extends StatefulWidget {
   const PageViewDemo({super.key});
@@ -21,15 +22,29 @@ class _PageViewDemoState extends State<PageViewDemo> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: PageView.builder(
+        controller: pageController,
           itemCount: onBoardingList.length,
           itemBuilder: (context , i){
-        return Column(children: [
-          Image.asset(onBoardingList[i].image.toString(), height: 500,),
-          Text(onBoardingList[i].title.toString(),style: TextStyle(fontSize: 30),),
-          Text(onBoardingList[i].description.toString(),style: TextStyle(fontSize: 25
-          ),),
-          ElevatedButton(onPressed: (){}, child: Text("Next")),
-        ],);
+        return Column(
+          children: [
+            Expanded(
+              child: Column(children: [
+                Image.asset(onBoardingList[i].image.toString(), height: 500,),
+                Text(onBoardingList[i].title.toString(),style: TextStyle(fontSize: 30),),
+                Text(onBoardingList[i].description.toString(),style: TextStyle(fontSize: 25
+                ),),
+                ElevatedButton(onPressed: (){}, child: Text("Next")),
+              ],),
+            ),
+            SmoothPageIndicator(
+                controller: pageController,  // PageController
+                count:  onBoardingList.length,
+                effect:  SwapEffect(),  // your preferred effect
+                onDotClicked: (index){
+                }
+            )
+          ],
+        );
       }),
     );
   }
