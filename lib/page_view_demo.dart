@@ -22,6 +22,7 @@ class _PageViewDemoState extends State<PageViewDemo> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: PageView.builder(
+        scrollDirection: Axis.vertical,
         controller: pageController,
           itemCount: onBoardingList.length,
           itemBuilder: (context , i){
