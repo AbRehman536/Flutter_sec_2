@@ -11,6 +11,7 @@ import 'package:flutter_sec_2/network_image.dart';
 import 'package:flutter_sec_2/page_view_demo.dart';
 import 'package:flutter_sec_2/row_column.dart';
 import 'package:flutter_sec_2/single_selection.dart';
+import 'package:flutter_sec_2/tabbar_demo.dart';
 
 import 'appbardemo.dart';
 
@@ -45,7 +46,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: BottomBarDemo(),
+      home: TabBarDemo(),
     );
   }
 }
