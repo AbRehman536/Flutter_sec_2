@@ -65,6 +65,7 @@ class _DialogBoxDemoState extends State<DialogBoxDemo> {
                   content: Text("Login Successfull"),
                   actions: [
                     TextButton(onPressed: (){
+
                       Navigator.pop(context);
                     }, child: Text("No")),
                     TextButton(onPressed: (){
