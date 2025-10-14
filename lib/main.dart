@@ -14,16 +14,22 @@ import 'package:flutter_sec_2/nested_row_column.dart';
 import 'package:flutter_sec_2/network_image.dart';
 import 'package:flutter_sec_2/page_view_demo.dart';
 import 'package:flutter_sec_2/popup_menu.dart';
+import 'package:flutter_sec_2/provider/screen_a.dart';
+import 'package:flutter_sec_2/provider/user.dart';
 import 'package:flutter_sec_2/row_column.dart';
 import 'package:flutter_sec_2/screen_a.dart';
 import 'package:flutter_sec_2/single_selection.dart';
 import 'package:flutter_sec_2/stack.dart';
 import 'package:flutter_sec_2/tabbar_demo.dart';
+import 'package:provider/provider.dart';
 
 import 'appbardemo.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MultiProvider(providers: [
+    ChangeNotifierProvider(create: (context)=>UserProvider()),
+  ],
+  child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -53,7 +59,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: StackDemo(),
+      home: ScreenADemo(),
     );
   }
 }
