@@ -6,6 +6,7 @@ import 'package:flutter_sec_2/date_time_picker.dart';
 import 'package:flutter_sec_2/dialogbox_demo.dart';
 import 'package:flutter_sec_2/drawer_menu.dart';
 import 'package:flutter_sec_2/fab.dart';
+import 'package:flutter_sec_2/full_coverage.dart';
 import 'package:flutter_sec_2/gridview_demo.dart';
 import 'package:flutter_sec_2/listtile_demo.dart';
 import 'package:flutter_sec_2/login_form.dart';
@@ -59,7 +60,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: ScreenADemo(),
+      home: FullCoverage(),
     );
   }
 }
